@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 import styleToken from "../styles/styleToken.css";
 import styled from "@emotion/styled";
 
-export type ButtonProps = {
+type ButtonProps = {
   children?: React.ReactNode;
   color?: keyof typeof styleToken.color;
   backgroundColor?: keyof typeof styleToken.color;
@@ -33,23 +33,27 @@ export default function Button({
 
 const ButtonContainer = styled.button<ButtonProps>`
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
-  ${({ size }) =>
-    size ? `font-size: ${styleToken.size[size]}` : "font-size: 20px"};
+  font-size: ${({ size }) =>
+    size ? `${styleToken.size[size]}` : `${styleToken.size.m}`};
   ${({ colorScheme }) =>
     colorScheme
       ? `color: ${styleToken.colorScheme[colorScheme].color}`
-      : "color: white"};
+      : `color: ${styleToken.color.white}`};
   ${({ colorScheme }) =>
     colorScheme
       ? `background-color: ${styleToken.colorScheme[colorScheme].backgroundColor}`
-      : "background-color: pink"};
-  ${({ color }) =>
-    color ? `color: ${styleToken.color[color]}` : "color: white"};
-  ${({ backgroundColor }) =>
+      : `background-color: ${styleToken.color.lightGray}`};
+  color: ${({ color }) =>
+    color ? `${styleToken.color[color]}` : `${styleToken.color.white}`};
+  background-color: ${({ backgroundColor }) =>
     backgroundColor
-      ? `background-color: ${styleToken.color[backgroundColor]}`
-      : "background-color: pink"};
+      ? `${styleToken.color[backgroundColor]}`
+      : `${styleToken.color.lightGray}`};
+  :hover {
+    opacity: 0.8;
+    border-color: transparent;
+  }
 `;
