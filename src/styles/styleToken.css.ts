@@ -28,6 +28,7 @@ const FONT_PROPERTIES = {
   weightBold: 600,
   weightMedium: 500,
   weightRegular: 400,
+  weightLight: 300,
 };
 
 const styleToken = {

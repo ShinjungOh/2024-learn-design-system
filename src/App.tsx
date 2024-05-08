@@ -2,11 +2,14 @@ import "./App.css";
 import Button from "./components/Button";
 import Input from "./components/Input";
 import Flex from "./components/Flex.tsx";
+import Typography from "./components/Typography.tsx";
 
 export default function App() {
   return (
     <>
-      <h1>Design System</h1>
+      <Typography fontSize="l" fontWeight="weightBold">
+        Design System
+      </Typography>
       <Button backgroundColor="blue" color="white" size="s">
         Click me!
       </Button>
@@ -18,6 +21,7 @@ export default function App() {
       <Flex color="white" backgroundColor="pink" direction="column">
         flex box
       </Flex>
+      <Typography>Typography</Typography>
     </>
   );
 }
