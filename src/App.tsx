@@ -7,7 +7,7 @@ import Typography from "./components/Typography.tsx";
 export default function App() {
   return (
     <>
-      <Typography fontSize="l" fontWeight="weightBold">
+      <Typography variant="h1" fontSize="l" fontWeight="weightBold">
         Design System
       </Typography>
       <Button backgroundColor="blue" color="white" size="s">
@@ -21,7 +21,7 @@ export default function App() {
       <Flex color="white" backgroundColor="pink" direction="column">
         flex box
       </Flex>
-      <Typography>Typography</Typography>
+      <Typography variant="body2">Typography</Typography>
     </>
   );
 }
