@@ -19,9 +19,9 @@ const COLOR_SCHEME = {
 };
 
 const SIZE_PROPERTIES = {
-  s: "10px",
-  m: "20px",
-  l: "30px",
+  sm: "10px",
+  md: "20px",
+  lg: "30px",
 };
 
 const FONT_PROPERTIES = {

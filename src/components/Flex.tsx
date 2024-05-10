@@ -7,7 +7,7 @@ type FlexProps = {
   direction: "row" | "column" | "row-reverse" | "column-reverse";
   width?: number;
   height?: string;
-  fontSize?: keyof typeof styleToken.size;
+  size?: keyof typeof styleToken.size;
   color?: keyof typeof styleToken.color;
   backgroundColor?: keyof typeof styleToken.color;
 } & React.HTMLAttributes<HTMLDivElement>;
@@ -19,7 +19,7 @@ export default function Flex({
   height,
   color,
   backgroundColor,
-  fontSize,
+  size,
 }: PropsWithChildren<FlexProps>) {
   return (
     <FlexContainer
@@ -28,7 +28,7 @@ export default function Flex({
       height={height}
       color={color}
       backgroundColor={backgroundColor}
-      fontSize={fontSize}
+      size={size}
     >
       {children}
     </FlexContainer>
@@ -47,8 +47,8 @@ const FlexContainer = styled.div<FlexProps>`
   border: 1px solid transparent;
   width: ${({ width }) => (width ? `${width}px` : "100%")};
   height: ${({ height }) => (height ? `${height}` : "auto")};
-  font-size: ${({ fontSize }) =>
-    fontSize ? `${styleToken.size[fontSize]}` : `${styleToken.size.m}`};
+  font-size: ${({ size }) =>
+    size ? `${styleToken.size[size]}` : `${styleToken.size.md}`};
   color: ${({ color }) =>
     color ? `${styleToken.color[color]}` : `${styleToken.color.black}`};
   background-color: ${({ backgroundColor }) =>

@@ -34,8 +34,8 @@ type TypographyVariant =
 type TypographyProps = {
   children: React.ReactNode;
   variant: TypographyVariant;
-  fontSize?: keyof typeof styleToken.size;
-  color?: keyof typeof styleToken.color;
+  size?: keyof typeof styleToken.size;
+  colorScheme?: keyof typeof styleToken.color;
   fontWeight?: keyof typeof styleToken.font;
 } & HTMLAttributes<HTMLSpanElement>;
 
@@ -51,7 +51,7 @@ const TypographyContainer = styled.span<TypographyProps>`
   line-height: 1.4;
   white-space: pre-wrap;
   ${(props) => VARIANT[props.variant]};
-  ${(props) => props.color && `color: ${props.color}`};
-  ${(props) => props.fontSize && `font-size: ${props.fontSize}`};
+  ${(props) => props.colorScheme && `color: ${props.colorScheme}`};
+  ${(props) => props.size && `font-size: ${props.size}`};
   ${(props) => props.fontWeight && `font-weight: ${props.fontWeight}`};
 `;

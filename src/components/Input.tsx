@@ -3,14 +3,14 @@ import styleToken from "../styles/styleToken.css";
 import styled from "@emotion/styled";
 
 type InputProps = {
-  fontSize?: keyof typeof styleToken.size;
+  size?: keyof typeof styleToken.size;
   placeholder?: string;
   isDisabled?: boolean;
   required?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 export default function Input({
-  fontSize,
+  size,
   placeholder,
   isDisabled,
   required,
@@ -25,7 +25,7 @@ export default function Input({
 
   return (
     <InputContainer
-      fontSize={fontSize}
+      size={size}
       placeholder={placeholder}
       disabled={isDisabled}
       value={input}
@@ -49,6 +49,6 @@ const InputContainer = styled.input<InputProps>`
   border: 1px solid ${styleToken.color.lightGray};
   border-radius: 4px;
   color: ${styleToken.color.gray};
-  font-size: ${({ fontSize }) =>
-    fontSize ? `${styleToken.size[fontSize]}` : `${styleToken.size.m}`};
+  font-size: ${({ size }) =>
+    size ? `${styleToken.size[size]}` : `${styleToken.size.md}`};
 `;

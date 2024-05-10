@@ -37,7 +37,7 @@ const ButtonContainer = styled.button<ButtonProps>`
   justify-content: center;
   align-items: center;
   font-size: ${({ size }) =>
-    size ? `${styleToken.size[size]}` : `${styleToken.size.m}`};
+    size ? `${styleToken.size[size]}` : `${styleToken.size.md}`};
   ${({ colorScheme }) =>
     colorScheme
       ? `color: ${styleToken.colorScheme[colorScheme].color}`
