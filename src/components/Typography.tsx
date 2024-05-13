@@ -1,4 +1,4 @@
-import { HTMLAttributes, PropsWithChildren } from "react";
+import { CSSProperties, HTMLAttributes, PropsWithChildren } from "react";
 import styled from "@emotion/styled";
 import styleToken from "../styles/styleToken.css";
 
@@ -32,18 +32,23 @@ type TypographyVariant =
   | "body4";
 
 type TypographyProps = {
-  children: React.ReactNode;
   variant: TypographyVariant;
-  size?: keyof typeof styleToken.size;
-  colorScheme?: keyof typeof styleToken.color;
+  color?: CSSProperties["color"];
+  size?: CSSProperties["fontSize"];
   fontWeight?: keyof typeof styleToken.font;
 } & HTMLAttributes<HTMLSpanElement>;
 
 export default function Typography({
   children,
+  color,
+  size,
   ...props
 }: PropsWithChildren<TypographyProps>) {
-  return <TypographyContainer {...props}>{children}</TypographyContainer>;
+  return (
+    <TypographyContainer color={color} size={size} {...props}>
+      {children}
+    </TypographyContainer>
+  );
 }
 
 const TypographyContainer = styled.span<TypographyProps>`
@@ -51,7 +56,7 @@ const TypographyContainer = styled.span<TypographyProps>`
   line-height: 1.4;
   white-space: pre-wrap;
   ${(props) => VARIANT[props.variant]};
-  ${(props) => props.colorScheme && `color: ${props.colorScheme}`};
+  ${(props) => props.color && `color: ${props.color}`};
   ${(props) => props.size && `font-size: ${props.size}`};
   ${(props) => props.fontWeight && `font-weight: ${props.fontWeight}`};
 `;

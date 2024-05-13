@@ -18,12 +18,6 @@ const COLOR_SCHEME = {
   },
 };
 
-const SIZE_PROPERTIES = {
-  sm: "10px",
-  md: "20px",
-  lg: "30px",
-};
-
 const FONT_PROPERTIES = {
   weightBold: 600,
   weightMedium: 500,
@@ -34,7 +28,6 @@ const FONT_PROPERTIES = {
 const styleToken = {
   color: COLOR_PROPERTIES,
   colorScheme: COLOR_SCHEME,
-  size: SIZE_PROPERTIES,
   font: FONT_PROPERTIES,
 };
 
